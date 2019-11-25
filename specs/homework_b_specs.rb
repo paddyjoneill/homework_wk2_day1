@@ -28,4 +28,32 @@ class TestSportsTeam < MiniTest::Test
     assert_equal("Alex", sports_team.coach_name())
   end
 
+  def test_add_player
+    sports_team = SportsTeam.new("E36 TableTennis",["Paddy", "Cody"], "Stephen")
+    sports_team.new_player("Andrew")
+    assert_equal(["Paddy", "Cody", "Andrew"], sports_team.players())
+  end
+
+  def test_player_already_exists_true
+    sports_team = SportsTeam.new("E36 TableTennis",["Paddy", "Cody"], "Stephen")
+    assert_equal(true, sports_team.player_already_exists("Paddy"))
+  end
+
+  def test_player_already_exists_false
+    sports_team = SportsTeam.new("E36 TableTennis",["Paddy", "Cody"], "Stephen")
+    assert_equal(false, sports_team.player_already_exists("Evan"))
+  end
+
+  def test_update_points_win
+    sports_team = SportsTeam.new("E36 TableTennis",["Paddy", "Cody"], "Stephen")
+    sports_team.update_points("win")
+    assert_equal(3, sports_team.get_points)
+  end
+
+  def test_update_points_lost
+    sports_team = SportsTeam.new("E36 TableTennis",["Paddy", "Cody"], "Stephen")
+    sports_team.update_points("loss")
+    assert_equal(0, sports_team.get_points)
+  end
+
 end
