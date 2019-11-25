@@ -8,24 +8,24 @@ class TestSportsTeam < MiniTest::Test
 
   def test_get_team_name
     sports_team = SportsTeam.new("E36 TableTennis",["Paddy", "Cody"], "Stephen")
-    assert_equal("E36 TableTennis", sports_team.get_team_name)
+    assert_equal("E36 TableTennis", sports_team.team_name())
 
   end
 
   def test_get_players
     sports_team = SportsTeam.new("E36 TableTennis",["Paddy", "Cody"], "Stephen")
-    assert_equal(["Paddy", "Cody"], sports_team.get_players)
+    assert_equal(["Paddy", "Cody"], sports_team.players())
   end
 
   def test_get_coach_name
     sports_team = SportsTeam.new("E36 TableTennis",["Paddy", "Cody"], "Stephen")
-    assert_equal("Stephen", sports_team.get_coach_name)
+    assert_equal("Stephen", sports_team.coach_name())
   end
 
   def test_set_coach_name
     sports_team = SportsTeam.new("E36 TableTennis",["Paddy", "Cody"], "Stephen")
-    sports_team.set_coach_name("Alex")
-    assert_equal("Alex", sports_team.get_coach_name)
+    sports_team.coach_name = "Alex"
+    assert_equal("Alex", sports_team.coach_name())
   end
 
 end

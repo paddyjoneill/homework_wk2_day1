@@ -5,20 +5,24 @@ class SportsTeam
     @coach_name = coach_name
   end
 
-  def get_team_name
-    @team_name
-  end
+attr_reader :team_name, :players
 
-  def get_players
-    @players
-  end
+  # def get_team_name
+  #   @team_name
+  # end
+  #
+  # def get_players
+  #   @players
+  # end
 
-  def get_coach_name
-    @coach_name
-  end
+attr_accessor :coach_name
 
-  def set_coach_name(coach_name)
-    @coach_name = coach_name
-  end
+  # def get_coach_name
+  #   @coach_name
+  # end
+  #
+  # def set_coach_name(coach_name)
+  #   @coach_name = coach_name
+# end
 
 end
